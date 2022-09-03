@@ -17,13 +17,13 @@ const yearMin = yearMax - 10;
 
 // 5) Genear un objeto con las selecciones de busqueda:
 const datosBusqueda = {
-    marca : " ",
-    year : " ",
-    minimo : " ",
-    maximo : " ",
-    puertas : " ",
-    transmision : " ",
-    color : " ",
+    marca : "",
+    year : "",
+    minimo : "",
+    maximo : "",
+    puertas : "",
+    transmision : "",
+    color : "",
 }
 
 
@@ -104,7 +104,7 @@ color.addEventListener("change", (e) => {
 
     // 6) Funcion que filtra en base a la busqueda:
    function filtrarAuto() {
-    const resultado = autos.filter( filtrarMarca ).filter( filtrarYear )
+    const resultado = autos.filter( filtrarMarca ).filter(filtrarYear)
     console.log(resultado);
    }
 
@@ -112,19 +112,20 @@ color.addEventListener("change", (e) => {
     const { marca } = datosBusqueda;
     if( marca ) {
         return auto.marca === marca;
-    }
+    }else {
         return auto;
         
    }
+}
 
    function filtrarYear (auto) {
     const { year } = datosBusqueda;
     
     if( year ){
         return auto.year === parseInt(year);
-    }
+    }else {
         return auto;
     
    }
-
+}
 
